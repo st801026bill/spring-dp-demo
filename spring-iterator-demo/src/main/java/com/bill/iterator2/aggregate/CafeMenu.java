@@ -1,4 +1,4 @@
-package com.bill.iterator2.menu;
+package com.bill.iterator2.aggregate;
 
 import java.util.Hashtable;
 import java.util.Iterator;

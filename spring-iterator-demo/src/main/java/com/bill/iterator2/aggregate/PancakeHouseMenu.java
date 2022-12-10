@@ -1,9 +1,7 @@
-package com.bill.iterator1.menu;
-
-import com.bill.iterator1.iterator.Iterator;
-import com.bill.iterator1.iterator.PancakeHouseMenuIterator;
+package com.bill.iterator2.aggregate;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PancakeHouseMenu implements Menu {
     ArrayList menuItems;
@@ -18,12 +16,14 @@ public class PancakeHouseMenu implements Menu {
     }
 
     public void addItem(String name, String description, boolean vegetarian, double price) {
-        com.bill.iterator1.menu.MenuItem menuItem = new com.bill.iterator1.menu.MenuItem(name, description, vegetarian, price);
+        MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
         menuItems.add(menuItem);
     }
 
     @Override
     public Iterator createIterator() {
-        return new PancakeHouseMenuIterator(menuItems);
+        //1. 不建立自己的反覆器，我們直接呼叫ArrayList的iterator()方法取得反覆器
+        //return new PancakeHouseMenuIterator(menuItems);
+        return menuItems.iterator();
     }
 }

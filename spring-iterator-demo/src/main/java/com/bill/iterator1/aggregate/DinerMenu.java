@@ -1,8 +1,7 @@
-package com.bill.iterator2.menu;
+package com.bill.iterator1.aggregate;
 
-import com.bill.iterator2.iterator.DinerMenuJdkIterator;
-
-import java.util.Iterator;
+import com.bill.iterator1.iterator.DinerMenuIterator;
+import com.bill.iterator1.iterator.Iterator;
 
 public class DinerMenu implements Menu {
     static final int MAX_ITEMS = 6;
@@ -10,7 +9,7 @@ public class DinerMenu implements Menu {
     MenuItem[] menuItems;
 
     public DinerMenu() {
-        menuItems = new MenuItem[MAX_ITEMS];
+        menuItems = new com.bill.iterator1.aggregate.MenuItem[MAX_ITEMS];
 
         addItem("素食三明治",   "生菜全麥吐司",           true,   2.99);
         addItem("招牌三明治",   "培根生菜全麥吐司",       false,  2.99);
@@ -19,7 +18,7 @@ public class DinerMenu implements Menu {
     }
 
     public void addItem(String name, String description, boolean vegetarian, double price) {
-        MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
+        com.bill.iterator1.aggregate.MenuItem menuItem = new com.bill.iterator1.aggregate.MenuItem(name, description, vegetarian, price);
         if(numberOfItems >= MAX_ITEMS) {
             System.err.println("Sorry, menu is full! Can't add item to menu");
         } else {
@@ -30,6 +29,6 @@ public class DinerMenu implements Menu {
 
     @Override
     public Iterator createIterator() {
-        return new DinerMenuJdkIterator(menuItems);
+        return new DinerMenuIterator(menuItems);
     }
 }

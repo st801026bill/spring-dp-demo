@@ -1,4 +1,4 @@
-package com.bill.iterator1.menu;
+package com.bill.iterator2.aggregate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

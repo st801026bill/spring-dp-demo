@@ -1,9 +1,9 @@
 package com.bill;
 
-import com.bill.iterator2.menu.DinerMenu;
-import com.bill.iterator2.menu.PancakeHouseMenu;
+import com.bill.iterator2.aggregate.DinerMenu;
+import com.bill.iterator2.aggregate.PancakeHouseMenu;
 import com.bill.iterator2.client.MenuClient;
-import com.bill.iterator2.menu.CafeMenu;
+import com.bill.iterator2.aggregate.CafeMenu;
 import lombok.extern.slf4j.Slf4j;
 
 /**

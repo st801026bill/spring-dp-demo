@@ -1,9 +1,8 @@
 package com.bill.iterator1.client;
 
 import com.bill.iterator1.iterator.Iterator;
-import com.bill.iterator1.menu.DinerMenu;
-import com.bill.iterator1.menu.MenuItem;
-import com.bill.iterator1.menu.PancakeHouseMenu;
+import com.bill.iterator1.aggregate.Menu;
+import com.bill.iterator1.aggregate.MenuItem;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,8 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MenuClient {
-    private PancakeHouseMenu pancakeHouseMenu;
-    private DinerMenu dinerMenu;
+    private Menu pancakeHouseMenu;
+    private Menu dinerMenu;
 
     public void printMenu() {
         Iterator pancakeIterator = pancakeHouseMenu.createIterator();

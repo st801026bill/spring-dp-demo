@@ -1,6 +1,6 @@
 package com.bill.iterator1.iterator;
 
-import com.bill.iterator1.menu.MenuItem;
+import com.bill.iterator1.aggregate.MenuItem;
 
 public class DinerMenuIterator implements Iterator {
 

@@ -1,6 +1,6 @@
 package com.bill.iterator2.iterator;
 
-import com.bill.iterator2.menu.MenuItem;
+import com.bill.iterator2.aggregate.MenuItem;
 
 import java.util.Iterator;
 

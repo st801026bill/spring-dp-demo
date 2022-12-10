@@ -1,7 +1,7 @@
 package com.bill.iterator2.client;
 
-import com.bill.iterator2.menu.Menu;
-import com.bill.iterator2.menu.MenuItem;
+import com.bill.iterator2.aggregate.Menu;
+import com.bill.iterator2.aggregate.MenuItem;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

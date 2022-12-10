@@ -1,4 +1,4 @@
-package com.bill.iterator1.menu;
+package com.bill.iterator1.aggregate;
 
 import com.bill.iterator1.iterator.Iterator;
 
