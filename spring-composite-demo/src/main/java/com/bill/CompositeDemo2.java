@@ -47,6 +47,7 @@ public class CompositeDemo2 {
 
         //印出素食菜單
         MenuClient waitress = new MenuClient(allMenus);
+//        waitress.printMenu();
         waitress.printVegetarianMenu();
     }
 }

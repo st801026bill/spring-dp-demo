@@ -18,7 +18,7 @@ public class MenuClient {
         Iterator<MenuComponent> iterator = allMenus.createIterator();
         System.out.print("\n素食菜單\n----\n");
         while(iterator.hasNext()) {
-            MenuComponent menuComponent = (MenuComponent)iterator.next();
+            MenuComponent menuComponent = iterator.next();
             //只有MenuItem的print()可以被呼叫，而Menu的不行(因為會throw UnsupportedOperationException())
             try {
                 if(menuComponent.isVegetarian()) {
