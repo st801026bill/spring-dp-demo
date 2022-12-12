@@ -1,5 +1,6 @@
 package com.bill.state2.context;
 
+import com.bill.state2.StateEnum;
 import com.bill.state2.state.*;
 
 public class CandyMachine {
@@ -14,11 +15,11 @@ public class CandyMachine {
     int count = 0;  //記錄裝有多少顆糖果，預設是沒有的
 
     public CandyMachine(int numberCandies) {
-        soldOutState    = new SoldOutState(this);
-        noQuarterState  = new NoQuarterState(this);
-        hasQuarterState = new HasQuarterState(this);
-        soldState       = new SoldState(this);
-        winnerState     = new WinnerState(this);
+        soldOutState    = new SoldOutState();
+        noQuarterState  = new NoQuarterState();
+        hasQuarterState = new HasQuarterState();
+        soldState       = new SoldState();
+        winnerState     = new WinnerState();
 
         this.count = numberCandies;
         state = numberCandies > 0? noQuarterState:soldOutState;
@@ -26,18 +27,18 @@ public class CandyMachine {
 
     //投入25分錢
     public void insertQuarter() {
-        state.insertQuarter();
+        state.insertQuarter(this);
     }
 
     //退出25分錢
     public void ejectQuarter() {
-        state.ejectQuarter();
+        state.ejectQuarter(this);
     }
 
     //轉動轉軸
     public void turnCrank() {
-        state.turnCrank();
-        state.dispense();
+        state.turnCrank(this);
+        state.dispense(this);
     }
 
     public void setState(State state) {
@@ -51,26 +52,43 @@ public class CandyMachine {
         }
     }
 
-    public State getSoldOutState() {
-        return soldOutState;
+    public State getState(StateEnum stateEnum) {
+        switch (stateEnum) {
+            case HAS_QUARTER :
+                return hasQuarterState;
+            case NO_QUARTER :
+                return noQuarterState;
+            case SOLD_OUT :
+                return soldOutState;
+            case SOLD :
+                return soldState;
+            case WINNER :
+                return winnerState;
+            default:
+                throw new NullPointerException();
+        }
     }
-
-    public State getNoQuarterState() {
-        return noQuarterState;
-    }
-
-    public State getHasQuarterState() {
-        return hasQuarterState;
-    }
-
-    public State getSoldState() {
-        return soldState;
-    }
-
-    public State getWinnerState() { return winnerState; }
 
     public int getCount() {
         return count;
     }
+
+//    public State getSoldOutState() {
+//        return soldOutState;
+//    }
+//
+//    public State getNoQuarterState() {
+//        return noQuarterState;
+//    }
+//
+//    public State getHasQuarterState() {
+//        return hasQuarterState;
+//    }
+//
+//    public State getSoldState() {
+//        return soldState;
+//    }
+//
+//    public State getWinnerState() { return winnerState; }
 
 }
